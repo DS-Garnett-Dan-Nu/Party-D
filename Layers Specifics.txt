@@ -1,0 +1,4 @@
+Layer 1: Player
+Layer 2: Flying Enemy
+Layer 3: Ground Enemy
+Layer 8: The World

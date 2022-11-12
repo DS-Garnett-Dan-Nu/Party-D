@@ -1,0 +1,311 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://assets/misc/void_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/misc/Settings/Settings BG.png" type="Texture" id=2]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/sur_h.png" type="Texture" id=3]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/sur_p.png" type="Texture" id=4]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/back_hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/GUIs/Pause menu/settings pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/back_pressed.png" type="Texture" id=7]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/back_normal.png" type="Texture" id=8]
+[ext_resource path="res://assets/GUIs/Pause menu/settings normal.png" type="Texture" id=9]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/sur_n.png" type="Texture" id=10]
+[ext_resource path="res://assets/GUIs/Pause menu/settings hover.png" type="Texture" id=11]
+[ext_resource path="res://assets/misc/PartyConfettiRegular-eZOn3.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://src/GUIs/ArcadeMenu.gd" type="Script" id=13]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/sca_p.png" type="Texture" id=14]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/sca_h.png" type="Texture" id=15]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/hunt_h.png" type="Texture" id=16]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/hunt_n.png" type="Texture" id=17]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/hunt_p.png" type="Texture" id=18]
+[ext_resource path="res://assets/GUIs/ArcadeMenu/sca_n.png" type="Texture" id=19]
+[ext_resource path="res://assets/misc/Skull.png" type="Texture" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+outline_size = 5
+outline_color = Color( 0.223529, 0.192157, 0.101961, 1 )
+extra_spacing_char = 12
+font_data = ExtResource( 12 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+outline_color = Color( 0.223529, 0.192157, 0.101961, 1 )
+extra_spacing_char = 5
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+extra_spacing_char = 5
+font_data = ExtResource( 12 )
+
+[node name="ArcadeMenu" type="Node2D"]
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_vertical_guides_": [ 240.0, 1040.0 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Bg" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 0.352941, 1, 0.717647, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 602.0
+margin_bottom = 339.0
+rect_scale = Vector2( 0.68, 0.68 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="settings" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = 280.0
+margin_right = 232.0
+margin_bottom = 328.0
+disabled = true
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 11 )
+texture_disabled = ExtResource( 6 )
+
+[node name="back" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.0
+margin_top = 280.0
+margin_right = -32.0
+margin_bottom = 328.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 5 )
+
+[node name="title" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 0.72549, 0, 1 )
+anchor_right = 1.0
+margin_top = 32.0
+margin_bottom = 93.0
+theme = SubResource( 2 )
+text = "Arcade Mode"
+align = 1
+valign = 1
+
+[node name="survivalpanal" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 640, 353.7 )
+scale = Vector2( 3.16958, 1.92467 )
+texture = ExtResource( 2 )
+
+[node name="scavengepanel" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 240, 353.7 )
+scale = Vector2( 3.16958, 1.92467 )
+texture = ExtResource( 2 )
+
+[node name="huntpanel" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 1040, 353.7 )
+scale = Vector2( 3.16958, 1.92467 )
+texture = ExtResource( 2 )
+
+[node name="survive" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = 184.0
+margin_right = -300.0
+margin_bottom = 232.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+
+[node name="scavenge" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 184.0
+margin_right = 100.0
+margin_bottom = 232.0
+disabled = true
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 14 )
+
+[node name="hunt" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 300.0
+margin_top = 184.0
+margin_right = 500.0
+margin_bottom = 232.0
+disabled = true
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 16 )
+texture_disabled = ExtResource( 18 )
+
+[node name="surphoto" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 240, 272 )
+scale = Vector2( 0.21875, 0.21875 )
+texture = ExtResource( 20 )
+
+[node name="surtitle" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.243137, 1, 0, 1 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 72.0
+margin_top = -209.0
+margin_right = -872.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 3 )
+text = "Survival Mode"
+align = 1
+valign = 1
+
+[node name="surdis" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 88.0
+margin_top = -16.0
+margin_right = -888.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 1, 0.72549, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.72549, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "Oh no! your voidbridge has been damaged. Rescue team has been dispatched but you will need to hold on your own until they arrive. 
+Good Luck!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="surinfo" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 72.0
+margin_top = 88.0
+margin_right = -872.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 4 )
+text = "Level: 1
+Survive for 1 min"
+align = 1
+valign = 1
+
+[node name="scaphoto" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 640, 272 )
+scale = Vector2( 0.21875, 0.21875 )
+texture = ExtResource( 20 )
+
+[node name="scatitle" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 0.72549, 0, 1 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 472.0
+margin_top = -209.0
+margin_right = -472.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 3 )
+text = "Scavenger Mode"
+align = 1
+valign = 1
+
+[node name="scadis" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 496.0
+margin_top = -16.0
+margin_right = -496.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 1, 0.72549, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.72549, 0, 1 )
+text = "You have been assigned to scavenge a dead void. Collect anything useful and retun in one piece.
+Beware of hostile entites and other unfriendly scavengers."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="scainfo" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 472.0
+margin_top = 88.0
+margin_right = -472.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 4 )
+text = "Level: 1
+Collect 50 items"
+align = 1
+valign = 1
+
+[node name="huntphoto" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 1040, 272 )
+scale = Vector2( 0.21875, 0.21875 )
+texture = ExtResource( 20 )
+
+[node name="hunttitle" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 872.0
+margin_top = -209.0
+margin_right = -72.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 3 )
+text = "Hunter Mode"
+align = 1
+valign = 1
+
+[node name="huntdis" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 896.0
+margin_top = -16.0
+margin_right = -96.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 1, 0.72549, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.72549, 0, 1 )
+text = "Alert! A void is going to be overflowed with various entities. You are assigned to hunt them down before they clip into our dimension.
+We can't let that happen!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="huntinfo" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 872.0
+margin_top = 88.0
+margin_right = -72.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 4 )
+text = "Level: 1
+Kill 50 entites"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="CanvasLayer/back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="CanvasLayer/survive" to="." method="_on_survival_pressed"]

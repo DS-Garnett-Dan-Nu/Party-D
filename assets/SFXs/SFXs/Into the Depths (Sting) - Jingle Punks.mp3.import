@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Into the Depths (Sting) - Jingle Punks.mp3-f222d0b3321d7b655b9768a24c7d17e8.mp3str"
+
+[deps]
+
+source_file="res://assets/SFXs/SFXs/Into the Depths (Sting) - Jingle Punks.mp3"
+dest_files=[ "res://.import/Into the Depths (Sting) - Jingle Punks.mp3-f222d0b3321d7b655b9768a24c7d17e8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

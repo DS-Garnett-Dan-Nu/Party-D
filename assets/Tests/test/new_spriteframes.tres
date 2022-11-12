@@ -1,0 +1,40 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=2]
+
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0009.png" type="Texture" id=1]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0014.png" type="Texture" id=2]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0000.png" type="Texture" id=3]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0006.png" type="Texture" id=4]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0013.png" type="Texture" id=5]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0017.png" type="Texture" id=6]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0016.png" type="Texture" id=7]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0003.png" type="Texture" id=8]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0008.png" type="Texture" id=9]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0011.png" type="Texture" id=10]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0007.png" type="Texture" id=11]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0015.png" type="Texture" id=12]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0005.png" type="Texture" id=13]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0012.png" type="Texture" id=14]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0010.png" type="Texture" id=15]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0004.png" type="Texture" id=16]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0001.png" type="Texture" id=17]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0019.png" type="Texture" id=18]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0002.png" type="Texture" id=19]
+[ext_resource path="res://assets/Char/WA_HAW/Walk/walk0018.png" type="Texture" id=20]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Air",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 20 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 35.0
+} ]

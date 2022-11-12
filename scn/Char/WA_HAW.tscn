@@ -1,0 +1,251 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://assets/Tests/test/new_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://assets/Char/WA_HAW/Gun.png" type="Texture" id=2]
+[ext_resource path="res://assets/SFXs/Default_Gun/WA_HAW.wav" type="AudioStream" id=3]
+[ext_resource path="res://src/Prototype files/TestPlayerGun.gd" type="Script" id=4]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion5.png" type="Texture" id=5]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion4.png" type="Texture" id=7]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion2.png" type="Texture" id=8]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion6.png" type="Texture" id=9]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion7.png" type="Texture" id=10]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion8.png" type="Texture" id=11]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion10.png" type="Texture" id=12]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion9.png" type="Texture" id=13]
+[ext_resource path="res://assets/Explosions FXs/Circle_explosion/Circle_explosion1.png" type="Texture" id=14]
+[ext_resource path="res://ScreenShake.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Char/WA_HAW/flashes/flashdefault0002.png" type="Texture" id=16]
+[ext_resource path="res://assets/Char/WA_HAW/flashes/flashdefault0003.png" type="Texture" id=17]
+[ext_resource path="res://assets/misc/HUD/CHARACTER HUD/HP Icon.png" type="Texture" id=18]
+[ext_resource path="res://assets/Tests/test/test_player/Health.png" type="Texture" id=19]
+[ext_resource path="res://assets/Tests/test/test_player/Blast.png" type="Texture" id=20]
+[ext_resource path="res://assets/Char/WA_HAW/flashes/flashdefault0004.png" type="Texture" id=21]
+[ext_resource path="res://src/Char/WA_HAW.gd" type="Script" id=22]
+[ext_resource path="res://assets/Char/WA_HAW/flashes/flashdefault0006.png" type="Texture" id=23]
+[ext_resource path="res://assets/Char/WA_HAW/flashes/flashdefault0007.png" type="Texture" id=24]
+[ext_resource path="res://assets/Char/WA_HAW/flashes/flashdefault0001.png" type="Texture" id=25]
+[ext_resource path="res://assets/Char/WA_HAW/flashes/flashdefault0005.png" type="Texture" id=26]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 17.0
+height = 24.0
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("h1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("h1:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../HealthScreen/HS:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "hp_crit"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("h1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.470588, 0, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../HealthScreen/HS:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 64.0
+height = 72.0
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "flash2",
+"speed": 60.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "flash",
+"speed": 60.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 30, 512 )
+
+[node name="Player" type="KinematicBody2D" groups=["player"]]
+collision_mask = 7
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -35.0 ],
+"_edit_vertical_guides_": [ -5.0, 49.0 ]
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -200 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 3.0
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
+
+[node name="ScreenShake" parent="Camera2D" instance=ExtResource( 15 )]
+
+[node name="Hearts" type="Node2D" parent="."]
+position = Vector2( 0, -41 )
+
+[node name="h1" type="Sprite" parent="Hearts"]
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -24, -32 )
+texture = ExtResource( 18 )
+
+[node name="h2" type="Sprite" parent="Hearts"]
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, -32 )
+texture = ExtResource( 18 )
+
+[node name="h3" type="Sprite" parent="Hearts"]
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 24, -32 )
+texture = ExtResource( 18 )
+
+[node name="health" type="AnimationPlayer" parent="Hearts"]
+anims/RESET = SubResource( 7 )
+anims/hp_crit = SubResource( 8 )
+
+[node name="PlatformCharIdle" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+frames = ExtResource( 1 )
+animation = "Walk"
+frame = 18
+
+[node name="Blast" type="Sprite" parent="PlatformCharIdle"]
+position = Vector2( -4, 0 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 20 )
+
+[node name="Hitbox" type="Area2D" parent="PlatformCharIdle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformCharIdle/Hitbox"]
+position = Vector2( -4, -128 )
+rotation = -1.57079
+shape = SubResource( 6 )
+
+[node name="Damage_Timer" type="Timer" parent="PlatformCharIdle"]
+wait_time = 1.5
+one_shot = true
+
+[node name="TestPlayerGun" type="Sprite" parent="."]
+position = Vector2( -5, -31 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+offset = Vector2( 70, 0 )
+script = ExtResource( 4 )
+
+[node name="B_Spawn_pos" type="Node2D" parent="TestPlayerGun"]
+position = Vector2( 0, -20 )
+scale = Vector2( 5, 5 )
+
+[node name="BulletPoint" type="Node2D" parent="TestPlayerGun/B_Spawn_pos"]
+position = Vector2( 54, 0 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="flash2" type="AnimatedSprite" parent="TestPlayerGun/B_Spawn_pos"]
+position = Vector2( 114, -2.5 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 11 )
+animation = "flash2"
+frame = 1
+playing = true
+
+[node name="flash" type="AnimatedSprite" parent="TestPlayerGun/B_Spawn_pos"]
+position = Vector2( 56, -2.5 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 5 )
+animation = "flash"
+frame = 3
+playing = true
+
+[node name="GunSFX" type="AudioStreamPlayer" parent="TestPlayerGun"]
+stream = ExtResource( 3 )
+volume_db = -35.0
+
+[node name="tile_eater" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="tile_eater"]
+position = Vector2( 820, -192 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="tile_eater"]
+position = Vector2( -820, -192 )
+shape = SubResource( 3 )
+
+[node name="HealthScreen" type="CanvasLayer" parent="."]
+
+[node name="HS" type="TextureRect" parent="HealthScreen"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+expand = true
+
+[connection signal="explosive" from="." to="Camera2D/ScreenShake" method="start" binds= [ 0.2, 15.0, 16.0, 1.0 ]]
+[connection signal="shake_after_damage" from="." to="Camera2D/ScreenShake" method="start" binds= [ 0.2, 15.0, 16.0, 1.0 ]]
+[connection signal="stayEnemy_explode" from="." to="Camera2D/ScreenShake" method="start" binds= [ 0.2, 16.0, 15.0, 1.0 ]]
+[connection signal="area_entered" from="PlatformCharIdle/Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="timeout" from="PlatformCharIdle/Damage_Timer" to="." method="_on_Damage_Timer_timeout"]

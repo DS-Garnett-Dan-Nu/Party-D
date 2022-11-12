@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/GUIs/Pause menu/Pause.png" type="Texture" id=1]
+[ext_resource path="res://assets/GUIs/Pause menu/resume_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/GUIs/Pause menu/resume_pressed.png" type="Texture" id=3]
+[ext_resource path="res://src/GUIs/PauseMenu.gd" type="Script" id=4]
+[ext_resource path="res://assets/GUIs/Pause menu/MM pressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/GUIs/Pause menu/MM hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/GUIs/Pause menu/resume_hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/GUIs/Pause menu/settings pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/GUIs/Pause menu/MM normal.png" type="Texture" id=9]
+[ext_resource path="res://assets/GUIs/Pause menu/settings normal.png" type="Texture" id=10]
+[ext_resource path="res://assets/GUIs/Pause menu/settings hover.png" type="Texture" id=11]
+[ext_resource path="res://assets/GUIs/Pause menu/restart pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/GUIs/Pause menu/restart hover.png" type="Texture" id=13]
+[ext_resource path="res://assets/GUIs/Pause menu/restart normal.png" type="Texture" id=14]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="control" type="CanvasLayer" parent="."]
+
+[node name="bg" type="ColorRect" parent="control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.392157 )
+
+[node name="Pause" type="TextureRect" parent="control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.0
+margin_top = -168.0
+margin_right = 52.0
+margin_bottom = -143.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="continue" type="TextureButton" parent="control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -64.0
+margin_right = 100.0
+margin_bottom = -16.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 7 )
+
+[node name="mainmenu" type="TextureButton" parent="control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 128.0
+margin_right = 100.0
+margin_bottom = 176.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+
+[node name="settings" type="TextureButton" parent="control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 64.0
+margin_right = 100.0
+margin_bottom = 112.0
+disabled = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 11 )
+texture_disabled = ExtResource( 8 )
+
+[node name="restart" type="TextureButton" parent="control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+
+[connection signal="pressed" from="control/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="control/mainmenu" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="control/restart" to="." method="_on_restart_pressed"]

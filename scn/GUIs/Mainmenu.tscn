@@ -1,0 +1,128 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/GUIs/Main menu/story_pressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/misc/void_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/GUIs/Main menu/exit normal.png" type="Texture" id=3]
+[ext_resource path="res://assets/GUIs/Main menu/story_hover.png" type="Texture" id=4]
+[ext_resource path="res://assets/GUIs/Main menu/exit hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/GUIs/Pause menu/settings hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/GUIs/Pause menu/settings normal.png" type="Texture" id=7]
+[ext_resource path="res://assets/GUIs/Main menu/exit pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/GUIs/Main menu/story_normal.png" type="Texture" id=9]
+[ext_resource path="res://assets/GUIs/Pause menu/settings pressed.png" type="Texture" id=10]
+[ext_resource path="res://src/GUIs/Mainmenu.gd" type="Script" id=11]
+[ext_resource path="res://assets/misc/PartyConfettiRegular-eZOn3.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/SFXs/BGM/music_zapsplat_space_trivia.mp3" type="AudioStream" id=13]
+[ext_resource path="res://scn/GUIs/ArcadeMenu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/GUIs/Main menu/arcade_normal.png" type="Texture" id=15]
+[ext_resource path="res://assets/GUIs/Main menu/arcade_pressed.png" type="Texture" id=16]
+[ext_resource path="res://assets/GUIs/Main menu/arcade_hover.png" type="Texture" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+outline_size = 5
+outline_color = Color( 0.223529, 0.192157, 0.101961, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 12 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="Mainmenu" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Bg" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color( 0.352941, 1, 0.717647, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 602.0
+margin_bottom = 339.0
+rect_scale = Vector2( 0.68, 0.68 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="name" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 0.72549, 0, 1 )
+anchor_right = 1.0
+margin_top = 32.0
+margin_bottom = 93.0
+theme = SubResource( 2 )
+text = "The Kollectors"
+align = 1
+valign = 1
+
+[node name="Story" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -497.0
+margin_top = -80.0
+margin_right = -297.0
+margin_bottom = -32.0
+disabled = true
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 1 )
+
+[node name="Acade" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -232.0
+margin_top = -80.0
+margin_right = -32.0
+margin_bottom = -32.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 17 )
+
+[node name="settings" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -80.0
+margin_right = 232.0
+margin_bottom = -32.0
+disabled = true
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 6 )
+texture_disabled = ExtResource( 10 )
+
+[node name="exit" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 295.0
+margin_top = -80.0
+margin_right = 495.0
+margin_bottom = -32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 5 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -15.0
+autoplay = true
+
+[node name="ArcadeMenu" parent="." instance=ExtResource( 14 )]
+visible = false
+
+[node name="CanvasLayer" parent="ArcadeMenu" index="0"]
+visible = false
+
+[connection signal="pressed" from="CanvasLayer/Acade" to="." method="_on_Acade_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_exit_pressed"]
+
+[editable path="ArcadeMenu"]
